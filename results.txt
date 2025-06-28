@@ -1,0 +1,26 @@
+============================================================
+STATISTICAL ARBITRAGE BACKTESTING SYSTEM RESULTS
+============================================================
+Trading Pair: KO vs PEP
+Date Range: 2020-01-01 to 2024-12-31
+
+COINTEGRATION ANALYSIS:
+  Cointegrated: No
+  Hedge Ratio (β): 0.3328
+
+OPTIMAL PARAMETERS:
+  Window Size: 20 days
+  Entry Threshold: 2.40
+  Exit Threshold: 0.00
+
+PERFORMANCE METRICS:
+  Total Return: 0.2520 (25.20%)
+  Sharpe Ratio: 1.0187
+  Max Drawdown: -0.0328 (-3.28%)
+  Win Rate: 0.0303 (3.03%)
+  Volatility: 0.0453 (4.53%)
+  Number of Trades: 1256
+
+============================================================
+END OF RESULTS
+============================================================
