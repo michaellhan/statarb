@@ -12,11 +12,11 @@ from trading_strategy import TradingStrategy
 def main():
     TICKER1 = "KO"
     TICKER2 = "PEP"
-    START_DATE = "2020-01-01"
+    START_DATE = "2022-01-01"
     END_DATE = "2024-12-31"
     
-    WINDOW_SIZES = list(range(10, 61, 5))
-    ENTRY_THRESHOLDS = np.arange(0.5, 2.6, 0.1)
+    WINDOW_SIZES = list(range(3, 11, 1))
+    ENTRY_THRESHOLDS = np.arange(0.1, 2.1, 0.1)
     EXIT_THRESHOLDS = np.arange(0.0, 1.1, 0.1)
     
     data_loader = DataLoader(START_DATE, END_DATE)
@@ -64,9 +64,11 @@ def main():
     results_str.append(f"  Window Size: {best_params['window_size']} days")
     results_str.append(f"  Entry Threshold: {float(best_params['entry_threshold']):.2f}")
     results_str.append(f"  Exit Threshold: {float(best_params['exit_threshold']):.2f}")
+    results_str.append(f"  Strategy Type: {best_params['strategy_type']}")
     results_str.append("")
     results_str.append("PERFORMANCE METRICS:")
     results_str.append(f"  Total Return: {best_performance['total_return']:.4f} ({best_performance['total_return']*100:.2f}%)")
+    results_str.append(f"  Annualized Return: {best_performance['total_return']*252/len(price_df):.4f} ({best_performance['total_return']*252/len(price_df)*100:.2f}%)")
     results_str.append(f"  Sharpe Ratio: {best_performance['sharpe_ratio']:.4f}")
     results_str.append(f"  Max Drawdown: {best_performance['max_drawdown']:.4f} ({best_performance['max_drawdown']*100:.2f}%)")
     results_str.append(f"  Win Rate: {best_performance['win_rate']:.4f} ({best_performance['win_rate']*100:.2f}%)")
